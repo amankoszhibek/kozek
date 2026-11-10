@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жібекке арналған махаббат бұрышы 💖</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,300;0,400;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        cursive: ['"Great Vibes"', 'cursive'],
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    },
+                    colors: {
+                        roseGold: '#E8C5C8',
+                        deepRose: '#881337',
+                        softPink: '#FFF0F3',
+                        blush: '#FFB7C5',
+                        passionRed: '#E11D48',
+                        goldAccent: '#F59E0B'
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-15px) rotate(3deg)' },
+                        },
+                        glow: {
+                            '0%': { boxShadow: '0 0 15px rgba(225, 29, 72, 0.4)' },
+                            '100%': { boxShadow: '0 0 35px rgba(225, 29, 72, 0.8)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animated background canvas styling */
+        #heartCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Custom Glassmorphism */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-card-dark {
+            background: rgba(136, 19, 55, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+        }
+
+        /* CSS Heart Shapes without images */
+        .css-heart {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            background-color: #E11D48;
+            transform: rotate(-45deg);
+            box-shadow: 0 10px 25px rgba(225, 29, 72, 0.5);
+            animation: pulse-heart 1.5s infinite;
+        }
+
+        .css-heart::before,
+        .css-heart::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #E11D48;
+            border-radius: 50%;
+        }
+
+        .css-heart::before {
+            top: -40px;
+            left: 0;
+        }
+
+        .css-heart::after {
+            left: 40px;
+            top: 0;
+        }
+
+        @keyframes pulse-heart {
+            0% { transform: rotate(-45deg) scale(0.9); }
+            50% { transform: rotate(-45deg) scale(1.08); }
+            100% { transform: rotate(-45deg) scale(0.9); }
+        }
+
+        /* Abstract Floral / Mandala Decorative Accent */
+        .art-circle {
+            background: radial-gradient(circle, rgba(255,183,197,0.8) 0%, rgba(244,63,94,0.1) 70%, rgba(255,255,255,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-softPink via-rose-100 to-rose-200 text-gray-800 font-sans min-h-screen relative overflow-x-hidden">
+
+    <!-- Floating Background Canvas Hearts -->
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-rose-200/50 px-6 py-4 transition-all duration-300">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="font-cursive text-3xl md:text-4xl text-passionRed font-bold tracking-wide hover:scale-105 transition-transform">
+                Жібек ✨
+            </a>
+            <div class="flex space-x-4 md:space-x-8 text-sm md:text-base font-medium text-deepRose">
+                <a href="#about" class="hover:text-passionRed transition-colors">Сезім</a>
+                <a href="#reasons" class="hover:text-passionRed transition-colors">Себептер</a>
+                <a href="#wishes" class="hover:text-passionRed transition-colors">Тілектер</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 relative z-10">
+        <!-- Floating Romantic Badge -->
+        <div class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-rose-300 shadow-sm mb-8 animate-bounce">
+            <span class="text-passionRed text-xl">✨</span>
+            <span class="text-xs md:text-sm uppercase tracking-widest text-deepRose font-semibold">Сүйікті Жібекке арналады</span>
+            <span class="text-passionRed text-xl">✨</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-cursive text-6xl sm:text-7xl md:text-9xl text-passionRed mb-6 drop-shadow-md leading-tight">
+            Сүйіктім Жібек
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="font-serif italic text-lg sm:text-2xl md:text-3xl text-deepRose max-w-2xl mb-12 font-light leading-relaxed px-4">
+            «Әлемдегі ең сұлу, ең нәзік әрі қымбат жанға арналған шағын махаббат әлемі...»
+        </p>
+
+        <!-- Dynamic Pure CSS Animated Heart Icon -->
+        <div class="my-6">
+            <div class="css-heart cursor-pointer transition-transform hover:scale-125" onclick="triggerHeartBurst(event)"></div>
+        </div>
+        <p class="text-xs text-rose-400 mt-8 uppercase tracking-widest">Жүректі түртіңіз ❤️</p>
+
+        <!-- Action Scroll Button -->
+        <a href="#about" class="mt-10 group inline-flex items-center space-x-3 bg-passionRed hover:bg-rose-700 text-white font-medium px-8 py-4 rounded-full shadow-lg hover:shadow-rose-500/50 transition-all duration-300">
+            <span>Сезімді сезіну</span>
+            <svg class="w-5 h-5 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </a>
+    </section>
+
+    <!-- SECTION 1: LOVE DECLARATION / ABOUT -->
+    <section id="about" class="py-24 px-4 relative z-10 max-w-5xl mx-auto">
+        <div class="glass-card rounded-3xl p-8 md:p-14 shadow-2xl relative overflow-hidden">
+            <!-- Background Decorative Art Shapes -->
+            <div class="absolute -top-20 -right-20 w-64 h-64 art-circle rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-20 -left-20 w-64 h-64 art-circle rounded-full blur-2xl"></div>
+
+            <div class="relative z-10 text-center space-y-6">
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-deepRose font-semibold">
+                    Сен менің өмірімнің нұрысың
+                </h2>
+                <div class="w-24 h-1 bg-passionRed mx-auto rounded-full"></div>
+                <p class="text-gray-700 text-base md:text-xl leading-relaxed font-light max-w-3xl mx-auto pt-4">
+                    Жібек, сенің күлкің — менің әлемімді жарықтандыратын ең асыл сәуле. Сені кездестірген күннен бастап өмірім жаңа мәнге, тәтті сезімге және шексіз қуанышқа толды. Әрбір өткізген сәтіміз — мен үшін баға жетпес қазына.
+                </p>
+                
+                <!-- Quote Box -->
+                <div class="mt-8 p-6 bg-rose-50/80 rounded-2xl border-l-4 border-passionRed italic font-serif text-deepRose text-lg sm:text-xl">
+                    «Жүректің соғуы да, өмірдің мәні де — тек сенің бар болғаныңда...»
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: REASONS WHY I LOVE YOU (Interactive Flip / Expand Cards) -->
+    <section id="reasons" class="py-24 px-4 relative z-10 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-deepRose font-bold mb-4">Сені сүюімнің себептері</h2>
+            <p class="text-gray-600 font-light max-w-md mx-auto">Төмендегі карточкаларды басып, ішкі сырымды оқыңыз ✨</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass-card p-8 rounded-3xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-rose-200" onclick="toggleCard(this)">
+                <div class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-passionRed text-2xl mb-6 shadow-inner">
+                    ✨
+                </div>
+                <h3 class="font-serif text-2xl text-deepRose font-semibold mb-3">Нәзік мінезің</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                    Сенің мейірімділігің мен нұрлы жүзің кез келген суық күнді жылыта алады.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card p-8 rounded-3xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-rose-200" onclick="toggleCard(this)">
+                <div class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-passionRed text-2xl mb-6 shadow-inner">
+                    🌸
+                </div>
+                <h3 class="font-serif text-2xl text-deepRose font-semibold mb-3">Тәтті күлкің</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                    Сенің күлген сәтіңді көру — мен үшін әлемдегі ең үлкен бақыт пен тыныштық.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card p-8 rounded-3xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-rose-200" onclick="toggleCard(this)">
+                <div class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-passionRed text-2xl mb-6 shadow-inner">
+                    💫
+                </div>
+                <h3 class="font-serif text-2xl text-deepRose font-semibold mb-3">Қамқор жүрегің</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                    Әрдайым мені түсініп, қолдап, жанымда болғаның үшін саған алғысым шексіз.
+                </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-card p-8 rounded-3xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-rose-200" onclick="toggleCard(this)">
+                <div class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-passionRed text-2xl mb-6 shadow-inner">
+                    🌹
+                </div>
+                <h3 class="font-serif text-2xl text-deepRose font-semibold mb-3">Сұлулығың</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                    Ішкі жан дүниең мен сыртқы келбетіңнің үйлесімі таңғажайып сұлулық береді.
+                </p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="glass-card p-8 rounded-3xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-rose-200" onclick="toggleCard(this)">
+                <div class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-passionRed text-2xl mb-6 shadow-inner">
+                    💎
+                </div>
+                <h3 class="font-serif text-2xl text-deepRose font-semibold mb-3">Даралығың</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                    Сен ешкімге ұқсамайтын, қайталанбас ерекше әрі бағалы жансың.
+                </p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="glass-card p-8 rounded-3xl shadow-lg cursor-pointer transform hover:-translate-y-2 transition-all duration-300 border border-rose-200" onclick="toggleCard(this)">
+                <div class="w-14 h-14 rounded-2xl bg-rose-100 flex items-center justify-center text-passionRed text-2xl mb-6 shadow-inner">
+                    💖
+                </div>
+                <h3 class="font-serif text-2xl text-deepRose font-semibold mb-3">Болашағымыз</h3>
+                <p class="text-gray-600 font-light leading-relaxed text-sm sm:text-base">
+                    Сенімен бірге жаңа армандарға ұмтылу және жарқын болашақ құру — ең тәтті арманым.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: INTERACTIVE LOVE WISHES GENERATOR -->
+    <section id="wishes" class="py-24 px-4 relative z-10 max-w-4xl mx-auto">
+        <div class="glass-card rounded-3xl p-8 sm:p-12 text-center shadow-2xl relative">
+            <h2 class="font-serif text-3xl sm:text-4xl text-deepRose font-bold mb-4">Жібекке арналған лебіздер</h2>
+            <p class="text-gray-600 font-light mb-8 text-sm sm:text-base">Түймені басып, жүректен шыққан арнайы тілекті ашыңыз ✨</p>
+            
+            <div id="quoteDisplay" class="min-h-[120px] flex items-center justify-center p-6 bg-white/60 rounded-2xl border border-rose-200 text-lg sm:text-2xl font-serif italic text-deepRose transition-all duration-500 shadow-inner">
+                «Жібек, сен менің ең тәтті арманымсың...»
+            </div>
+
+            <button onclick="generateNewQuote()" class="mt-8 bg-passionRed hover:bg-rose-700 text-white font-medium px-8 py-3.5 rounded-full shadow-lg hover:shadow-rose-500/50 transition-all duration-300 transform active:scale-95">
+                Жаңа лебізді көру 💌
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 relative z-10 text-center text-deepRose border-t border-rose-200/60 glass-card">
+        <p class="font-cursive text-3xl text-passionRed mb-2">Әрдайым сүйіктісің, Жібек!</p>
+        <p class="text-xs sm:text-sm font-light text-rose-800">
+            Барлық махаббатпен дайындалды ❤️ | Pure Aesthetic Romantic Experience
+        </p>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <script>
+        // Floating Heart Particles System (Canvas)
+        const canvas = document.getElementById('heartCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class HeartParticle {
+            constructor(x, y) {
+                this.x = x || Math.random() * canvas.width;
+                this.y = y || canvas.height + Math.random() * 100;
+                this.size = Math.random() * 15 + 8;
+                this.speedY = Math.random() * 1.5 + 0.5;
+                this.speedX = Math.sin(Math.random() * Math.PI) * 0.8;
+                this.opacity = Math.random() * 0.5 + 0.3;
+                this.color = `hsl(${340 + Math.random() * 20}, 80%, 60%)`;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                const topCurveHeight = this.size * 0.3;
+                ctx.moveTo(this.x, this.y + topCurveHeight);
+                // top left curve
+                ctx.bezierCurveTo(
+                    this.x, this.y, 
+                    this.x - this.size / 2, this.y, 
+                    this.x - this.size / 2, this.y + topCurveHeight
+                );
+                // bottom left curve
+                ctx.bezierCurveTo(
+                    this.x - this.size / 2, this.y + (this.size + topCurveHeight) / 2, 
+                    this.x, this.y + (this.size + topCurveHeight) / 1.3, 
+                    this.x, this.y + this.size
+                );
+                // bottom right curve
+                ctx.bezierCurveTo(
+                    this.x, this.y + (this.size + topCurveHeight) / 1.3, 
+                    this.x + this.size / 2, this.y + (this.size + topCurveHeight) / 2, 
+                    this.x + this.size / 2, this.y + topCurveHeight
+                );
+                // top right curve
+                ctx.bezierCurveTo(
+                    this.x + this.size / 2, this.y, 
+                    this.x, this.y, 
+                    this.x, this.y + topCurveHeight
+                );
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+
+            update() {
+                this.y -= this.speedY;
+                this.x += this.speedX;
+                if (this.y < -50) {
+                    this.y = canvas.height + 20;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+        }
+
+        // Initialize Particles
+        for (let i = 0; i < 35; i++) {
+            particles.push(new HeartParticle());
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+        animateCanvas();
+
+        // Heart Burst Interaction on Click
+        function triggerHeartBurst(e) {
+            const rect = e.target.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < 15; i++) {
+                const particle = new HeartParticle(centerX, centerY);
+                particle.speedY = (Math.random() - 0.5) * 4;
+                particle.speedX = (Math.random() - 0.5) * 4;
+                particles.push(particle);
+            }
+        }
+
+        // Romantic Quotes Generator
+        const quotes = [
+            "«Жібек, сен — менің жүрегімнің ең тәтті соғысысың.»",
+            "«Әлемдегі барлық сұлулық сенің көздеріңде көрініс тапқандай...»",
+            "«Сенімен өткізген әрбір секунд — мен үшін шексіз бақыт.»",
+            "«Сенің күлкің — менің әлемімдегі ең әдемі әуен.»",
+            "«Жібек, сен менің жүрегіме мәңгілік ұялаған махаббатымсың.»",
+            "«Қайда болсаң да, менің ойым да, тілегім де тек сенімен бірге.»"
+        ];
+
+        function generateNewQuote() {
+            const quoteDisplay = document.getElementById('quoteDisplay');
+            quoteDisplay.style.opacity = '0';
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                quoteDisplay.textContent = quotes[randomIndex];
+                quoteDisplay.style.opacity = '1';
+            }, 300);
+        }
+
+        // Card Animation Feedback
+        function toggleCard(card) {
+            card.classList.add('scale-105');
+            setTimeout(() => {
+                card.classList.remove('scale-105');
+            }, 200);
+        }
+    </script>
+</body>
+</html>
